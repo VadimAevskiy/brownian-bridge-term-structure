@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brownian-bridge-term-structure"
+version = "1.0.0"
+description = "Replication of Aevskiy & Chetverikov (2016): discrete-time Brownian bridge term structure model"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Vadim Aevskiy"},
+]
+keywords = [
+    "term structure",
+    "interest rates",
+    "Brownian bridge",
+    "monetary union",
+    "affine model",
+    "yield curve",
+    "EMU convergence",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "numba>=0.57",
+    "matplotlib>=3.7",
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.urls]
+Repository = "https://github.com/VadimAevskiy/brownian-bridge-term-structure"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
